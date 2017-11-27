@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Turn</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <style>
+    .visited {
+      background-color: lightgray;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Travel Wishlist</h1>
+
+<h3>Click on a place to 'visit' it</h3>
+
+<ul id="places">
+<li class="place">Rome</li>
+<li class="place">Cairo</li>
+<li class="place">New York</li>
+<li class="place">Rio de Janeiro</li>
+<li class="place">Your Mom</li>
+<li class="place">Boulder, CO</li>
+<li class="place">Down South</li>
+<li class="place">Branson, MO</li>
+<li class="place">Canada</li>
+</ul>
+
+<hr>
+
+<P>You have visited <span id="total_visited">0</span> place(s)</P>
+<P>You have <span id="total_not_visited">0</span> place(s) left to visit</P>
+
+<script>
+	var placeCount = $(".place").length;
+	var visitCount = $(".visit").length; 
+	
+	$("#total_visited").html(visitCount);
+	$("#total_not_visited").html(placeCount);
+	
+	
+  $(function(){
+    // TODO update the numbers in total_visited and total_not_visited spans
+		$(function(){
+			$("li").click(function(){
+				$(this).toggleClass("visit");
+				$(this).toggleClass("place");
+				
+				$(".visit").slideUp(1000);
+				
+				var placeCount = $(".place").length;
+				var visitCount = $(".visit").length; 
+				
+				
+
+				$("#total_not_visited").html(placeCount);
+				$("#total_visited").html(visitCount);
+				
+				if (placeCount == 0){
+					alert("You have visited everywhere" + $("#places").text());
+				}
+			});
+			
+			$("li").hover(
+				function(){
+				$(this).addClass("visited");
+				},
+				
+				function(){
+				$(this).removeClass("visited");
+				}
+			
+			
+			);
+			
+		});
+	
+    // TODO select all class=place elements. When they are clicked, add the class "visited"
+    // TODO keep the the numbers in total_visited and total_not_visited spans updated as user selects more places 
+    // TODO Display an alert when all destinations have been visited
+	
+    
+  });
+</script>
+
+</body>
+
+</html>

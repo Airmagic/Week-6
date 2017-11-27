@@ -1,0 +1,49 @@
+<!-- declaring the html document -->
+<!DOCTYPE html>
+<!-- declaring the language for the page -->
+<html lang="en">
+<!-- making the header for the page -->
+<head>
+	<meta charset="UTF-8">
+	<title>Hello JQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Making a style that has a canvas in the page, normally in a separate .css file -->
+  <style>
+	<!-- Closing the style -->
+  </style>
+<!-- closing the header -->
+</head>
+	<!-- opening the body of the page -->
+    <body>
+	<p>click me</p>
+	<p>click me 2</p>
+	<p>click me 3</p>
+	<p>click me 4</p>
+	<p>click me 5</p>
+	<p>click me 6</p>
+	<p>click me 7</p>
+	
+	<!-- creating the script for the page, normally in a .js file -->
+	<script>
+		$(function() {
+		$('li').css({background: 'aqua' });
+		$('p').css({background: 'teal' });
+		$('p').click(function);
+		});
+		$(document).ready(function(){
+			$("p").click(function(){
+				//alert("You clicked " + $(this).text());
+				(this).hide();
+				(this).css({
+				"color" : "blue",
+				"background-color" : "pink"
+				});
+			});
+		});
+		
+	//closing the script
+	</script>
+	<!-- closing the body -->
+	</body>
+<!-- closing the html page -->
+</html>
